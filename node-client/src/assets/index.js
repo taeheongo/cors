@@ -73,6 +73,8 @@ const requestWithCredentials = () => {
     }
   };
   xhr.open("GET", url);
+  /* 기본적으로 cross-site XMLHttpRequest 나 Fetch 호출에서 브라우저는 자격 증명을 보내지 않습니다. 
+  즉, cookie를 자동으로 요청에 추가하지 않는다는 뜻. 명시적으로 cookie를 넣어주기 위해 withCredentials */
   xhr.withCredentials = true;
   xhr.send();
 };
